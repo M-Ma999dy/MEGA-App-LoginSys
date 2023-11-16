@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Eng: Mohamed Magdy Mettwally">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This Site just For Training on Use HTML , CSS , Bootstrap , JS">
+    <meta name="keywords" content="HTML CSS SASS Bootstrap JS TS Angular2 Coding Developers Front-End">
+
+    <title>Login System</title>
+    <link rel="icon" type="image/x-icon" href="https://eng-m-ma9dy.github.io/Static-Files/IMG/Title-Logo-MM-White.png">
+    <meta property="og:image" content="https://eng-m-ma9dy.github.io/Static-Files/IMG/Cover-Logo-MM-White.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+
+    <link href="CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="CSS/all.min.css" rel="stylesheet" />
+    <link href="CSS/index.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!-- Loader -->
+    <!------------>
+
+    <div id="myLoading">
+
+        <!---------------------------------------------------------------->
+
+        <div id="loadingDiv" class="d-flex justify-content-center align-items-center">
+            <div id="loaderDiv" class="loader--style6" title="5">
+                <svg id="loaderSize" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="30px"
+                    viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                    <rect x="0" y="13" width="4" height="5" fill="blue">
+                        <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0s" dur="0.6s"
+                            repeatCount="indefinite" />
+                        <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0s" dur="0.6s"
+                            repeatCount="indefinite" />
+                    </rect>
+                    <rect x="10" y="13" width="4" height="5" fill="white">
+                        <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.15s" dur="0.6s"
+                            repeatCount="indefinite" />
+                        <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.15s" dur="0.6s"
+                            repeatCount="indefinite" />
+                    </rect>
+                    <rect x="20" y="13" width="4" height="5" fill="blue">
+                        <animate attributeName="height" attributeType="XML" values="5;21;5" begin="0.3s" dur="0.6s"
+                            repeatCount="indefinite" />
+                        <animate attributeName="y" attributeType="XML" values="13; 5; 13" begin="0.3s" dur="0.6s"
+                            repeatCount="indefinite" />
+                    </rect>
+                </svg>
+            </div>
+        </div>
+
+        <!---------------------------------------------------------------->
+
+    </div>
+
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!-- Navbar -->
+    <!------------>
+
+    <nav class="navbar py-3 px-5 d-flex justify-content-between align-items-center border-bottom border-info">
+
+        <a href="" class="text-decoration-none"><h1 class="text-info mb-0 fw-bolder">MEGA</h1></a>
+
+        <li id="navLogOutBTN" class="nav-item dropdown list-unstyled text-white position-relative">
+
+            <button type="button" class="nav-link dropdown-toggle border-0" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="./src/Images/profileNone.jpg" style="width: 50px;" class="rounded-circle" alt="">
+            </button>
+
+            <ul style="left: -50px;" class="dropdown-menu bg-dark position-absolute">
+              <li><button type="button" class="dropdown-item text-info" onclick="openProfileInfo()">Profile</button></li>
+              <li><hr class="dropdown-divider"></li>
+              <li class="text-center"><button type="button" id="singOutOutBTN" class="px-5 py-1 btn btn-outline-info">LogOut</button></li>
+            </ul>
+
+        </li>
+
+
+
+
+
+        <button type="button" id="navSingInBTN" onclick="openSingInForm()"  class="px-5 py-1 btn btn-outline-info d-none">Login</button>
+        <button type="button" id="navSingUpBTN" class="px-5 py-1 btn btn-outline-info d-none">SingUp</button>
+
+    </nav>
+
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!-- Site Log Sys -->
+    <!------------------>
+
+    <section id="smartLoginSys" style="background-color: #24353F;color: white;">
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!-- Login -->
+        <!----------->
+
+        <div id="singIn_Up_Page" class="container displayHome">
+
+            <div class="row">
+
+                <!---------------------------------------------------------------------------------------------------------------------------->
+                <!---------------------------------------------------------------------------------------------------------------------------->
+                <!-- SingUp Sys -->
+                <!---------------->
+
+                <div id="sysSingUp" class="megaShadow fame border border-info rounded-3 col-md-7 mx-auto my-5 p-5 rounded-2 displayHidden">
+                
+                    <h1 class="mb-3 text-info text-center">Registration</h1>
+                
+                    <div class="container">
+                    
+                        <div class="singUpInputs">
+                            <input id="singUpName" name="singUpName" type="text" class="text-start" placeholder="">
+                            <label for="singUpName">Full Name</label>
+                            <p id="invalidSingUpName" class="invalidError my-2 ps-2 text-danger d-none">Invalid Name</p>
+                        </div>
+                    
+                        <div class="singUpInputs">
+                            <input id="singUpPhone" name="singUpPhone" type="tel" class="text-start" placeholder="">
+                            <label for="singUpPhone">Your Phone</label>
+                            <p id="invalidSingUpPhone" class="invalidError my-2 ps-2 text-danger d-none">Invalid Phone</p>
+                        </div>
+                    
+                        <div class="singUpInputs">
+                            <input id="singUpMail" name="singUpMail" type="text" class="text-start" placeholder="">
+                            <label for="singUpMail">Your Mail</label>
+                            <p id="invalidSingUpMail" class="invalidError my-2 ps-2 text-danger d-none">Invalid Mail</p>
+                        </div>
+                    
+                        <div class="singUpInputs">
+                            <div class="d-flex">
+                                <input id="singUpPass" name="singUpPass" type="password" class="text-start" placeholder="">
+                                <label for="singUpPass">Your Password</label>
+                            
+                                <button type="button" style="width: 60px;" onclick="showSingUpPass()" class="bg-transparent text-end text-white border-0">
+                                    <i id="eyeSingUp" class="fs-4 fa-solid fa-eye-slash text-info"></i>
+                                </button>
+                            </div>
+                        
+                        
+                            <div class="text-start my-3 ps-2">
+                                <p id="capitalLetter" class="passError text-danger mb-3 text-danger"><span>( <i id="capitalLetterX"
+                                            class="passErrorCheck fa-solid fa-xmark"></i> )</span> Start Password By A Capital Letter</p>
+                                <p id="smallLetter" class="passError text-danger mb-3 text-danger"><span>( <i id="smallLetterX"
+                                            class="passErrorCheck fa-solid fa-xmark"></i> )</span> Password Must Be Contain Small Letter</p>
+                                <p id="spatial" class="passError text-danger mb-3 text-danger"><span>( <i id="spatialX"
+                                            class="passErrorCheck fa-solid fa-xmark"></i> )</span> Pass Must Be Contain A Spatial Characters</p>
+                                <p id="characters" class="passError text-danger mb-3 text-danger"><span>( <i id="charactersX"
+                                            class="passErrorCheck fa-solid fa-xmark"></i> )</span> Minimum Length of Password 8 Characters</p>
+                                <p id="passNumber" class="passError text-danger mb-3 text-danger"><span>( <i id="passNumberX"
+                                            class="passErrorCheck fa-solid fa-xmark"></i> )</span> End Password By A Number</p>
+                            </div>
+                        </div>
+                    
+                    
+                        <div class="text-center">
+
+                            <p id="singUpNotSuccess" class="my-3 text-danger d-none"><i class="fa-regular fa-circle-xmark"></i> User Already Exist</p>
+
+                            <button type="button" id="singUpBTN" onclick="addUser()" class="form-control btn btn-outline-info my-4 disabled">Registration</button>
+                        
+                            <p>You have an account? <button type="button" onclick="openSingInForm()" class="border-0 text-info fw-bold bg-transparent">Login</button>
+                            </p>
+                        
+                        </div>
+                    </div>
+                </div>
+            
+                <!---------------------------------------------------------------------------------------------------------------------------->
+                <!---------------------------------------------------------------------------------------------------------------------------->
+                <!---------------------------------------------------------------------------------------------------------------------------->
+                
+                <!---------------------------------------------------------------------------------------------------------------------------->
+                <!---------------------------------------------------------------------------------------------------------------------------->
+                <!-- SingIn Sys -->
+                <!---------------->
+
+                <div id="sysSingIn" class="megaShadow fame border border-info rounded-3 col-md-7 mx-auto my-5 p-5 rounded-2 displayHidden">
+                
+                    <h1 class="mb-3 text-info text-center">Login</h1>
+                
+                    <div class="container">
+                    
+                        <div class="singInInputs">
+                            <input id="singInMail" name="singInMail" type="text" class="text-start" placeholder="">
+                            <label for="singInMail">Your Mail</label>
+                            <p id="invalidSingInMail" class="invalidError my-2 ps-2 text-danger d-none">Invalid Mail</p>
+                        </div>
+                    
+                        <div class="singInInputs">
+                            <div class="d-flex">
+                                <input id="singInPass" name="singInPass" type="password" class="text-start" placeholder="">
+                                <label for="singInPass">Your Password</label>
+                            
+                                <button type="button" style="width: 60px;" onclick="showSingInPass()" class="bg-transparent text-end text-white border-0">
+                                    <i id="eyeSingIn" class="fs-4 fa-solid fa-eye-slash text-info"></i>
+                                </button>
+                            </div>
+                            <p id="invalidSingInPass" class="invalidError my-2 ps-2 text-danger d-none">Invalid Password</p>    
+                        </div>
+                    
+                        <div class="text-center">
+                            <p id="notFound" class="my-3 text-danger d-none"><i class="fa-regular fa-circle-xmark"></i> User Not Found...!</p>
+                            <p id="wrongPass" class="my-3 text-danger d-none"><i class="fa-regular fa-circle-xmark"></i> Incorrect Password</p>
+
+                            <button type="button" id="singInBTN" onclick="login()"  class="form-control btn btn-outline-info my-4 disabled">LogIn</button>
+                        
+                            <p>You have an account? <button type="button" id="singUpForm" class="border-0 text-info fw-bold">SingUp</button></p>
+                        
+                            <button type="button" id="forgotPassForm" class="border-0 text-info fw-bold">Forgot Password...?</button>
+
+                        </div>
+                    </div>
+                
+                </div>
+            
+                <!---------------------------------------------------------------------------------------------------------------------------->
+                <!---------------------------------------------------------------------------------------------------------------------------->
+                <!---------------------------------------------------------------------------------------------------------------------------->
+
+                <!---------------------------------------------------------------------------------------------------------------------------->
+                <!---------------------------------------------------------------------------------------------------------------------------->
+                <!-- Forgot Pass Sys -->
+                <!--------------------->
+
+                <div id="sysForgotPass" class="megaShadow fame border border-info rounded-3 col-md-7 mx-auto my-5 p-5 rounded-2 displayHidden">
+                
+                    <h1 class="mb-3 text-info text-center">Forgot Password</h1>
+                
+                    <div class="container">
+                    
+                        <div class="forgotPassInputs">
+                            <input id="forgotPassMail" name="forgotPassMail" type="text" class="text-start" placeholder="">
+                            <label for="forgotPassMail">Your Mail</label>
+                            <p id="invalidForgotPassMail" class="invalidError my-2 ps-2 text-danger d-none">Invalid Mail</p>
+                        </div>
+                    
+                        <div class="forgotPassInputs">
+                            <input id="forgotPassPhone" name="forgotPassPhone" type="tel" class="text-start" placeholder="">
+                            <label for="forgotPassPhone">Your Phone</label>
+                            <p id="invalidForgotPassPhone" class="invalidError my-2 ps-2 text-danger d-none">Invalid Phone</p>
+                        </div>
+
+
+
+
+                        <div id="enterNewPass" class="forgotPassInputs d-none">
+                            <div class="d-flex">
+                                <input id="forgotPassPass" name="forgotPassPass" type="password" class="text-start" placeholder="">
+                                <label for="forgotPassPass">New Password</label>
+                            
+                                <button type="button" style="width: 60px;" onclick="showForgotPassPass()" class="bg-transparent text-end text-white border-0">
+                                    <i id="eyeForgotPass" class="fs-4 fa-solid fa-eye-slash text-info"></i>
+                                </button>
+                            </div>
+                        
+                        
+                            <div class="text-start my-3 ps-2">
+                                <p id="capitalLetterForgotPass" class="passError text-danger mb-3 text-danger"><span>( <i id="capitalLetterXForgotPass"
+                                            class="passErrorCheck fa-solid fa-xmark"></i> )</span> Start Password By A Capital Letter</p>
+                                <p id="smallLetterForgotPass" class="passError text-danger mb-3 text-danger"><span>( <i id="smallLetterXForgotPass"
+                                            class="passErrorCheck fa-solid fa-xmark"></i> )</span> Password Must Be Contain Small Letter</p>
+                                <p id="spatialForgotPass" class="passError text-danger mb-3 text-danger"><span>( <i id="spatialXForgotPass"
+                                            class="passErrorCheck fa-solid fa-xmark"></i> )</span> Pass Must Be Contain A Spatial Characters</p>
+                                <p id="charactersForgotPass" class="passError text-danger mb-3 text-danger"><span>( <i id="charactersXForgotPass"
+                                            class="passErrorCheck fa-solid fa-xmark"></i> )</span> Minimum Length of Password 8 Characters</p>
+                                <p id="passNumberForgotPass" class="passError text-danger mb-3 text-danger"><span>( <i id="passNumberXForgotPass"
+                                            class="passErrorCheck fa-solid fa-xmark"></i> )</span> End Password By A Number</p>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="text-center">
+                            <p id="forgotPassNotFound" class="my-3 text-danger d-none"><i class="fa-regular fa-circle-xmark"></i> Mail Not Found...!</p>
+                            <p id="forgotPassIncorrectPhone" class="my-3 text-danger d-none"><i class="fa-regular fa-circle-xmark"></i> Incorrect Phone</p>
+                
+                            <button type="button" id="forgotPassBTN" onclick="checkInfo()"  class="form-control btn btn-outline-info my-4 disabled">Check Info</button>
+                        
+                            <p>You have an account? <button type="button" onclick="openSingInForm()"  class="border-0 text-info fw-bold bg-transparent">Login</button>
+                        
+                        </div>
+                    </div>
+                
+                </div>
+            
+                <!---------------------------------------------------------------------------------------------------------------------------->
+                <!---------------------------------------------------------------------------------------------------------------------------->
+                <!---------------------------------------------------------------------------------------------------------------------------->
+
+            </div>
+
+        </div>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!---------------------------------------------------------------------------------------------------------------------------->
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!-- Home -->
+        <!---------->
+
+        <div id="home_Page" class="container displayHome">
+
+            <div class="row">
+
+                <div id="sysHome" class="megaShadow fame col-11 col-md-9 col-xl-8 mx-auto my-5 p-5 border border-info rounded-3 d-flex flex-column justify-content-center align-items-center">
+        
+                        <div class="text-center p-5">
+
+                            <h1 class="mb-5"><span id="homeUserName" class="text-info"></span></h1>
+                            
+                            <h3>Welcome To Our Site</h3>
+                        
+                        </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!---------------------------------------------------------------------------------------------------------------------------->
+
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!-- Profile -->
+        <!------------->
+
+        <div id="profile_Page" class="container displayHome">
+
+            <div class="row">
+
+                <div id="userProfileDiv" class="megaShadow fame col-11 mx-auto my-5 px-3 py-5 border border-info rounded-3 position-relative">
+
+                    <button onclick="openCloseHome('home_Page')" style="position: absolute;top: 10px; right: 15px;" class="bg-transparent p-0 border-0 text-info fs-2"><i class="fa-regular fa-circle-xmark"></i></button>
+
+                    <div class="row">
+
+                        <div class="col-md-5 my-auto d-flex justify-content-center">
+                            <img class="w-75 rounded-5 mb-4 mb-md-0" src="./src/Images/profileNone.jpg" alt="">
+                        </div>
+
+                        <div class="col-md-7 d-flex flex-column justify-content-center">
+                            <p class="my-4"> <Span class="fs-3 fw-bold text-info">Name :     </Span> <span id="profileName"  class="fs-3"></span> </p>
+                            <p class="my-4"> <Span class="fs-3 fw-bold text-info">Phone :    </Span> <span id="profilePhone" class="fs-3"></span> </p>
+                            <p class="my-4"> <Span class="fs-3 fw-bold text-info">E-Mail :   </Span> <span id="profileMail"  class="fs-3"></span> </p>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+    
+
+            </div>
+
+        </div>
+
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!---------------------------------------------------------------------------------------------------------------------------->
+        <!---------------------------------------------------------------------------------------------------------------------------->
+
+
+    </section>
+
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!-- Footer -->
+    <!------------>
+
+    <footer id="contact" class="py-5 bg-black text-white border-top border-info">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+
+                    <h4 class="mb-4 pb-4 border-bottom">Author :</h4>
+
+                    <h1>M O H A M E D</h1>
+
+                    <h1>M A G D Y</h1>
+
+                </div>
+
+                <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+
+                    <h4 class="mb-4 pb-4 border-bottom">Contact :</h4>
+
+                    <h6><a href="mailto:Eng.M.Ezzeldeen@gmail.com" class="a_None text-white">Email:
+                            Eng.M.Ezzeldeen@gmail.com</a></h6>
+
+                    <button type="button" class="bg-transparent text-white border-0 p-0" onclick="openLink('wa.me/+201140155633')">
+                        <h6 class="mb-0">Phone : +20 11 40 155 6 33</h6>
+                    </button>
+
+                    <div class="d-flex justify-content-start my-3">
+
+                        <button type="button" onclick="openLink('github.com/Eng-M-Ma9dy')"
+                            class="SM-BTN-icon GitHub    me-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                            <i class="fa-brands fa-github"></i>
+                        </button>
+
+                        <button type="button" onclick="openLink('www.linkedin.com/in/eng-m-ma9dy/')"
+                            class="SM-BTN-icon LinkedIn  mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </button>
+
+                        <button type="button" onclick="openLink('www.facebook.com/eng.m.ma9dy/')"
+                            class="SM-BTN-icon Facebook  mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                            <i class="fa-brands fa-facebook"></i>
+                        </button>
+
+                        <button type="button" onclick="openLink('www.instagram.com/eng.m.ma9dy/')"
+                            class="SM-BTN-icon Instagram ms-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                            <i class="fa-brands fa-instagram"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-xl-3 my-3 my-lg-0">
+
+                    <h4 class="mb-4 pb-4 border-bottom">Pages :</h4>
+
+                    <h6><a href="mailto:Info.Unit.Alex@gmail.com" class="a_None text-white">Info.Unit.Alex@gmail.com</a>
+                    </h6>
+
+                    <button type="button" class="bg-transparent text-white border-0 p-0" onclick="openLink('wa.me/+201285880488')">
+                        <h6 class="mb-0">WA : +20 12 858 80 4 88</h6>
+                    </button>
+
+                    <div class="text-light d-flex justify-content-start my-3">
+
+                        <button type="button" onclick="openLink('www.facebook.com/info.unit.iu/')"
+                            class="SM-BTN-icon Facebook  me-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                            <i class="fa-brands fa-facebook"></i>
+                        </button>
+
+                        <button type="button" onclick="openLink('www.tiktok.com/@info.unit.iu')"
+                            class="SM-BTN-icon TikTok    mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </button>
+
+                        <button type="button" onclick="openLink('www.instagram.com/info.unit.iu')"
+                            class="SM-BTN-icon Instagram mx-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                            <i class="fa-brands fa-instagram"></i>
+                        </button>
+
+                        <button type="button" onclick="openLink('youtube.com/@Info.Unit-IU')"
+                            class="SM-BTN-icon Youtube   ms-2 fs-3 bg-light d-flex align-items-center justify-content-center">
+                            <i class="fa-brands fa-youtube"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="col-md-6 col-xl-3 mt-3 mt-lg-0 d-none d-md-flex justify-content-start justify-content-xl-center">
+
+                    <button type="button" class="bg-transparent text-white border-0 p-0"
+                        onclick="openLink('eng-m-ma9dy.github.io/MAGDY/')"><img src="src/Images/Logo-MM.jpg"
+                            class="footer_logo rounded-circle" alt=""></button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!---------------------------------------------------------------------------------------------------------------------------->
+    <!-- JS Links -->
+    <!-------------->
+
+    <!-- Offline Bootstrap js : -->
+    <script src="JS/bootstrap.bundle.min.js"></script>
+
+    <!-- jquery js : -->
+    <script src="JS/jquery-3.6.3.min.js"></script>
+
+    <!-- My js : -->
+    <script src="JS/index.js"></script>
+
+</body>
+
+</html>

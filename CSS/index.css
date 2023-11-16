@@ -1,0 +1,208 @@
+*{
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Loader ---------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+/* 
+body{
+  scroll-behavior: smooth;
+  overflow: hidden;
+  margin: 0;
+}
+   */
+#myLoading{
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999999999999999999;
+}
+
+#loaderDiv{
+  margin: 0 0 2em;
+  width: 20%;
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto 1rem;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#loaderSize{
+  transform: scale(3);
+}
+
+
+
+/* ----------------------------------------------------------------------------- */
+/* Login Sys ------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+
+#smartLoginSys{
+    background-image: url(../src/Images/bg.jpg);
+    background-position: bottom center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.megaShadow{
+    box-shadow:  -5px 2px 54px -9px rgb(0 0 0);
+}
+#singUpForm{
+    background-color: transparent;
+}
+#SingInForm{
+    background-color: transparent;
+}
+#forgotPassForm{
+    background-color: transparent;
+}
+
+
+
+
+
+
+
+.navbar{
+    background-color: black;
+    width: 100%;
+}
+.navbar button{
+    background-color: transparent;
+}
+
+.fame{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+
+
+.singUpInputs{
+    position: relative;
+    margin: 25px 0;
+}
+
+.singInInputs{
+    position: relative;
+    margin: 25px 0;
+}
+
+.forgotPassInputs{
+    position: relative;
+    margin: 25px 0;
+}
+
+input{
+    background-color: transparent;
+    padding: 10px !important;
+    border: solid #0DCAF0 2px !important;
+    color: white !important;
+    width: 100% !important;
+    border-radius: 5px !important;
+    transition: all 0.2s ease;
+}
+label{
+    position: absolute;
+    left: 10px;
+    top: 11px;
+    padding: 0 4px;
+    color: #0DCAF0 !important;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+input:not(:placeholder-shown)~label,
+input:focus~label{
+    top: -15px;
+    font-size: 15px;
+}
+/* ----------------------------------------------------------------------------- */
+/* Footer ---------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+
+.footer_logo{
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s;
+    border: solid black 1px;
+}
+
+.footer_logo:hover{
+    border: solid blueviolet 10px;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* Shared ---------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------- */
+
+h1{
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.Pointer{
+    cursor: pointer;
+}
+
+.a_None{
+    text-decoration: none;
+}
+
+.SM-BTN-icon{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: solid black 3px;
+    transition: transform 0.75s;
+}
+.SM-BTN-icon:hover{
+    border: solid white 2px;
+    transform: scale(1.25);
+}
+
+.GitHub{
+    color: black;
+}
+
+.LinkedIn{
+    color: #0366C3;
+}
+
+.Facebook{
+    color: #1877F2;
+}
+
+.Twitter{
+    color: #1877F2;
+}
+
+.Instagram{
+    color: #E8067F;
+}
+
+.Youtube{
+    color: red;
+}
+
+.TikTok{
+    color: black;
+}
+
+
+
+
